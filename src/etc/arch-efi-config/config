@@ -1,0 +1,3 @@
+EFIPATH=/efi/
+BOOTMGRDIR=/EFI/Arch/
+SPLASHPATH=/usr/share/systemd/bootctl/splash-arch.bmp

@@ -1,0 +1,12 @@
+[Trigger]
+Type = Path
+Operation = Install
+Operation = Upgrade
+Target = boot/vmlinuz-linux
+Target = boot/initramfs-linux-fallback.img
+
+[Action]
+Description = Updating unified kernel image...
+When = PostTransaction
+Depends = arch-efi-config
+Exec = /boot/install.sh linux-fallback.efi /boot/initramfs-linux-fallback.img
