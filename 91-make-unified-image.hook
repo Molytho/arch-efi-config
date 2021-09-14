@@ -2,8 +2,8 @@
 Type = Path
 Operation = Install
 Operation = Upgrade
-Target = boot/vmlinuz-linux
-Target = boot/initramfs-linux.img
+Target = usr/lib/modules/*/vmlinuz
+Target = usr/lib/initcpio/*
 
 [Action]
 Description = Updating unified kernel image...
