@@ -1,0 +1,5 @@
+post-install() {
+	usr/bin/update-command-line
+	/boot/install.sh linux.efi /boot/initramfs-linux.img
+	/boot/install.sh linux-fallback.efi /boot/initramfs-linux-fallback.img	
+}
