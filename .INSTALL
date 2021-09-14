@@ -1,5 +1,14 @@
 post-install() {
+	echo "Building images"
+	pwd
+
 	usr/bin/update-command-line
-	/boot/install.sh linux.efi /boot/initramfs-linux.img
-	/boot/install.sh linux-fallback.efi /boot/initramfs-linux-fallback.img	
+	boot/install.sh linux.efi /boot/initramfs-linux.img
+	boot/install.sh linux-fallback.efi /boot/initramfs-linux-fallback.img	
+}
+
+pre-remove() {
+	if [ -e etc/arch-efi-config/command-line ]; then
+		rm etc/arch-efi-config/command-line
+	fi
 }
