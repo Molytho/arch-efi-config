@@ -1,8 +1,0 @@
-#!/bin/sh
-
-ROOTDISK=$(cat /proc/mounts | awk '$2 == "/"' | awk '{print $1}')
-UUID=$(blkid | grep $ROOTDISK | sed 's/.* UUID="\([-a-zA-Z0-9]*\)" .*/\1/')
-
-cp /etc/arch-efi-config/command-line.template /etc/arch-efi-config/command-line
-echo "root=UUID=$UUID ro" >> /etc/arch-efi-config/command-line
-chmod 0400 /etc/arch-efi-config/command-line

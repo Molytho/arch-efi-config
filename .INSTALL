@@ -1,11 +1,9 @@
 post_install() {
-	usr/bin/update-command-line
-	boot/install.sh linux.efi /boot/initramfs-linux.img
-	boot/install.sh linux-fallback.efi /boot/initramfs-linux-fallback.img	
+	usr/sbin/update-unified-image linux.efi /boot/initramfs-linux.img
+	usr/sbin/update-unified-image linux-fallback.efi /boot/initramfs-linux-fallback.img
 }
 
 pre_remove() {
-	rm -f etc/arch-efi-config/command-line
 	rm -f boot/linux.efi
 	rm -f boot/linux.efi.old
 	rm -f boot/linux-fallback.efi

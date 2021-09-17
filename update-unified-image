@@ -1,0 +1,10 @@
+#!/bin/sh
+
+pipename=ramfs.pipe
+
+mkfifo -m 0600 $pipename
+
+cat /boot/ucode-intel.img $2 > $pipename &
+/boot/install.sh $1 $pipename
+
+rm $pipename

@@ -4,7 +4,7 @@ source /etc/arch-efi-config/config
 
 IMAGENAME=$1
 RAMFSPATH=$2
-IMAGEPATH=/boot/$IMAGENAME
+IMAGEPATH=$DEST/$IMAGENAME
 
 if [ -e $IMAGEPATH ]; then
 	mv $IMAGEPATH $IMAGEPATH.old
