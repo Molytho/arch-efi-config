@@ -1,6 +1,6 @@
 post_install() {
-	usr/sbin/update-unified-image linux.efi /boot/initramfs-linux.img
-	usr/sbin/update-unified-image linux-fallback.efi /boot/initramfs-linux-fallback.img
+	usr/bin/update-unified-image linux.efi /boot/initramfs-linux.img
+	usr/bin/update-unified-image linux-fallback.efi /boot/initramfs-linux-fallback.img
 }
 
 pre_remove() {

@@ -9,4 +9,4 @@ Target = usr/lib/initcpio/*
 Description = Updating unified kernel image...
 When = PostTransaction
 Depends = arch-efi-config
-Exec = /boot/install.sh linux.efi /boot/initramfs-linux.img
+Exec = /usr/bin/update-unified-image linux.efi /boot/initramfs-linux.img
