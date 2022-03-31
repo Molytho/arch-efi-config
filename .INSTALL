@@ -1,6 +1,11 @@
 post_install() {
-	usr/bin/update-unified-image linux.efi /boot/initramfs-linux.img
-	usr/bin/update-unified-image linux-fallback.efi /boot/initramfs-linux-fallback.img
+	if [ ! -f "/etc/arch-efi-config/command-line" ]; then
+		cp /etc/arch-efi-config/command-line.default /etc/arch-efi-config/command-line
+	fi
+
+	usr/bin/update-unified-image linux.efi /boot/initramfs-linux.img /boot/vmlinuz-linux
+	usr/bin/update-unified-image linux-fallback.efi /boot/initramfs-linux-fallback.img /boot/vmlinuz-linux
+	usr/bin/update-unified-image linux-zen.efi /boot/initramfs-linux-zen.img /boot/vmlinuz-linux-zen
 }
 
 pre_remove() {
@@ -8,4 +13,6 @@ pre_remove() {
 	rm -f boot/linux.efi.old
 	rm -f boot/linux-fallback.efi
 	rm -f boot/linux-fallback.efi.old
+	rm -f boot/linux-zen.efi
+	rm -f boot/linux-zen.efi.old
 }

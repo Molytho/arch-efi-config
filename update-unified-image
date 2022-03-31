@@ -5,6 +5,6 @@ pipename=ramfs.pipe
 mkfifo -m 0600 $pipename
 
 cat /boot/intel-ucode.img $2 > $pipename &
-/boot/install.sh $1 $pipename
+/boot/install.sh $1 $pipename $3
 
 rm $pipename
