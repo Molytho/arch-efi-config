@@ -1,5 +1,5 @@
 pkgname=arch-efi-config
-pkgver=0.2
+pkgver=0.3
 pkgrel=1
 arch=(x86_64)
 depends=(
